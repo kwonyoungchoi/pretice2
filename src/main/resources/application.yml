@@ -1,0 +1,34 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    driver-class-name: org.h2.Driver
+    hikari:
+      jdbc-url: jdbc:h2:~/db/memberdb;MODE=MySQL
+    username: sa
+    password: 1234
+
+
+  jpa:
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true
+    hibernate:
+      ddl-auto: update
+    database-platform: org.hibernate.dialect.H2Dialect
+
+
+  devtools:
+    livereload:
+      enabled: true
+    restart:
+      enabled: true
+
+
+logging:
+  level:
+    org.hibernate.type.descriptor.sql: trace
+
+
